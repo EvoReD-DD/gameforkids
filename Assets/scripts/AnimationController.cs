@@ -12,17 +12,19 @@ public class AnimationController : MonoBehaviour
 
     private void Start()
     {
-        timecountdown = 2f;
+       // timecountdown = 2f;
     }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
 
-       
         if (collision.gameObject.GetComponent<Zub>())
         {
             AnimPlay();
+            //Counter();
         }
     }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         
@@ -33,17 +35,19 @@ public class AnimationController : MonoBehaviour
             
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         AnimStop();
-       
     }
 
 
     private void AnimPlay()
     {
-        hand1.GetComponent<Animation>().Play("HandZombi");
-        hand2.GetComponent<Animation>().Play("Handzombie2");
+       
+            hand1.GetComponent<Animation>().Play("HandZombi");
+            hand2.GetComponent<Animation>().Play("Handzombie2");
+        
         
     }
 
@@ -53,13 +57,13 @@ public class AnimationController : MonoBehaviour
         hand2.GetComponent<Animation>().Stop("Handzombie2");
         
     }
-    private void Counter()
+   /* private void Counter()
     {
 
         if (timecountdown <= 0.0f)
         {
             AnimStop();
         }
-    }
+    }*/
 
 }

@@ -5,12 +5,12 @@ using UnityEngine;
 public class ParticleControl : MonoBehaviour
 {
     public ParticleSystem particle;
-    private float timecountdown;
+    private float timeCountDown;
 
 
     private void Start()
     {
-        timecountdown = 2f;
+        timeCountDown = 2f;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -21,8 +21,8 @@ public class ParticleControl : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        timecountdown -= Time.fixedDeltaTime;
-        Debug.Log(timecountdown);
+        timeCountDown -= Time.deltaTime;
+        Debug.Log(timeCountDown);
         
         ParticlePlay(collision);
 
@@ -39,7 +39,7 @@ public class ParticleControl : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<Zub>())
         {
-            ParticleSystem particle = GetComponent<ParticleSystem>();
+
             particle.Play();
          
         }
@@ -47,15 +47,14 @@ public class ParticleControl : MonoBehaviour
 
     public void ParticleStop()
     {
-        ParticleSystem particle = GetComponent<ParticleSystem>();
         particle.Stop();
     }
     private void Counter()
     {
 
-        if (timecountdown <= 0.0f)
+        if (timeCountDown <= 0.0f)
         {
-            Debug.Log("Done" + timecountdown);
+            Debug.Log("Done" + timeCountDown);
             ParticleStop();
         }
     }

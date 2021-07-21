@@ -6,14 +6,30 @@ using UnityEngine;
 public class PlayerMoveMouse : MonoBehaviour
 
 {
-
+    private bool isDragging;
     public Transform player;
-
-
-    void OnMouseDrag()
+    void OnMouseDown()
     {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            player.position = new Vector2(mousePos.x, mousePos.y);
+        isDragging = true;
     }
+    void OnMouseUp()
+    {
+        isDragging = false;
+        
+    }
+    void FixedUpdate()
+    {
+        Dragging();
+    }
+    void Dragging()
+    {
+        if (isDragging)
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            player.position = new Vector2(mousePos.x, mousePos.y);
+           
+        }
+    }
+    
 
 }
