@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,7 +15,7 @@ public class ZubAnimationController : MonoBehaviour
    
     void OnTriggerStay2D (Collider2D collision)
     {
-            timeCountDown -= Time.deltaTime;
+            timeCountDown -= Time.deltaTime; //сч₴тчик для остановки анимации
 
             if (timeCountDown <= 0)
             {
@@ -24,7 +24,7 @@ public class ZubAnimationController : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        timeCountDown = 2f;
+        timeCountDown = 2f; //ето попытка сбросить переменную при выходе из тригера(но не работает)
     }
 
     private void AnimStop()
