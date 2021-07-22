@@ -7,12 +7,12 @@ public class AnimationController : MonoBehaviour
     public GameObject player;
     public GameObject hand1;
     public GameObject hand2;
-    private float timecountdown;
+
 
 
     private void Start()
     {
-       // timecountdown = 2f;
+       
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -21,7 +21,7 @@ public class AnimationController : MonoBehaviour
         if (collision.gameObject.GetComponent<Zub>())
         {
             AnimPlay();
-            //Counter();
+            
         }
     }
 
@@ -57,13 +57,4 @@ public class AnimationController : MonoBehaviour
         hand2.GetComponent<Animation>().Stop("Handzombie2");
         
     }
-   /* private void Counter()
-    {
-
-        if (timecountdown <= 0.0f)
-        {
-            AnimStop();
-        }
-    }*/
-
 }
