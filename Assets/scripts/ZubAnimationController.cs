@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ZubAnimationController : MonoBehaviour
 {
-    private float t = 30f;
+    private float t = 3f;
     Coroutine FadeIns = null;
 
 
@@ -19,10 +19,15 @@ public class ZubAnimationController : MonoBehaviour
 
     void OnTriggerStay2D (Collider2D collision)
     {
-        FadeIns = StartCoroutine(FadeIn());
+        
         ParticlePlay();
         AnimHandPlay();
         
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        FadeIns = StartCoroutine(FadeIn());
+        pulsezub.GetComponent<Animation>().Stop();
     }
     void OnTriggerExit2D(Collider2D collision)
     {
@@ -35,9 +40,9 @@ public class ZubAnimationController : MonoBehaviour
         Debug.Log("startcoroutine");
         while (t > 0)
         {
-            t -= Time.deltaTime; 
-            float a = t;
-            zubPlox.GetComponent<Image>().color = new Color(255, 255, 255, a);
+            t -= Time.deltaTime;
+            float alpha = Mathf.Lerp(0f, 1f, t);
+            zubPlox.GetComponent<Image>().color = new Color(255, 255, 255, alpha);
             yield return 0;
             Stop();
         }
@@ -56,7 +61,7 @@ public class ZubAnimationController : MonoBehaviour
         if (t <= 0)
         {
             starParticle.Play();
-            pulsezub.GetComponent<Animation>().Stop();
+            
             pulsezub.GetComponent<Image>().color = new Color(255, 255, 255, 0);
             ParticleStop();
             AnimHandStop();
