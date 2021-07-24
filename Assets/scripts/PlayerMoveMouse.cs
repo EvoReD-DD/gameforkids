@@ -15,9 +15,8 @@ public class PlayerMoveMouse : MonoBehaviour
     void OnMouseUp()
     {
         isDragging = false;
-        
     }
-    void FixedUpdate()
+    void Update()
     {
         Dragging();
     }
@@ -27,9 +26,6 @@ public class PlayerMoveMouse : MonoBehaviour
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             player.position = new Vector2(mousePos.x, mousePos.y);
-           
         }
     }
-    
-
 }
