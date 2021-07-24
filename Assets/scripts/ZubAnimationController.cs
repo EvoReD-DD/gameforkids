@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ZubAnimationController : MonoBehaviour
 {
     private float t = 30f;
+    Coroutine FadeIns = null;
 
 
     [SerializeField] private GameObject pulsezub;
@@ -18,30 +19,27 @@ public class ZubAnimationController : MonoBehaviour
 
     void OnTriggerStay2D (Collider2D collision)
     {
-        StartCoroutine(FadeIn());
+        FadeIns = StartCoroutine(FadeIn());
         ParticlePlay();
         AnimHandPlay();
+        
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        StopCoroutine(FadeIn());
+        StopCoroutine(FadeIns);
         ParticleStop();
         AnimHandStop();
     }
     IEnumerator FadeIn()
     {
-        Debug.Log("coroutinestart");
+        Debug.Log("startcoroutine");
         while (t > 0)
         {
             t -= Time.deltaTime; 
-            float a = t; 
+            float a = t;
             zubPlox.GetComponent<Image>().color = new Color(255, 255, 255, a);
-            if (t <= 0)
-            {
-                starParticle.Play();
-                AnimStop();
-            }
-            yield return 0;  
+            yield return 0;
+            Stop();
         }
     }
     void ParticlePlay()
@@ -53,13 +51,17 @@ public class ZubAnimationController : MonoBehaviour
     {
         dirt.Stop();
     }
-    void AnimStop()
+    void Stop()
     {
+        if (t <= 0)
+        {
+            starParticle.Play();
             pulsezub.GetComponent<Animation>().Stop();
             pulsezub.GetComponent<Image>().color = new Color(255, 255, 255, 0);
             ParticleStop();
             AnimHandStop();
             Destroy();
+        }
     }
     void AnimHandPlay()
     {

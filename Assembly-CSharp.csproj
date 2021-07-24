@@ -57,7 +57,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\PlayerMoveMouse.cs" />
-    <Compile Include="Assets\scripts\Zub.cs" />
     <Compile Include="Assets\scripts\ZubAnimationController.cs" />
   </ItemGroup>
   <ItemGroup>
