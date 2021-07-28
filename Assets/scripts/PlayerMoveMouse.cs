@@ -6,13 +6,14 @@ using UnityEngine;
 public class PlayerMoveMouse : MonoBehaviour
 
 {
-    private bool isDragging;
+    public bool isDragging;
     public Transform player;
-    private Vector3 screenPoint;
-    private Vector3 offset;
+
+    
     void OnMouseDown()
     {
         isDragging = true;
+       
     }
     void OnMouseUp()
     {
