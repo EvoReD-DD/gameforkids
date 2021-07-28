@@ -14,7 +14,6 @@ public class ArrowChase : MonoBehaviour
     }
     void Destroy()
     { 
-        Debug.Log("isDragging");
         isDragging = PlayerMoveMouse.GetComponent<PlayerMoveMouse>().isDragging;
         if (isDragging==true)
         {
