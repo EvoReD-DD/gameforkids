@@ -9,10 +9,8 @@ public class CleaningController : MonoBehaviour
     [SerializeField] ParticleSystem particlesBonus;
     [SerializeField] GameObject handLeft;
     [SerializeField] GameObject handRight;
-    [SerializeField] GameObject pulsezub1;
-    [SerializeField] GameObject pulsezub2;
-    [SerializeField] GameObject zubPlox1;
-    [SerializeField] GameObject zubPlox2;
+    [SerializeField] GameObject[] zubPlox;
+    [SerializeField] GameObject[] pulseZub;
     Collider2D DestroyColl;
     Coroutine FadeIns = null;
     public float bonus;
@@ -23,13 +21,13 @@ public class CleaningController : MonoBehaviour
         if (collision.GetComponent<Zub>())
         {
             // FadeIns = StartCoroutine(FadeIn());
-            pulsezub1.GetComponent<Animation>().Stop();
+            pulseZub[0].GetComponent<Animation>().Stop();
             Debug.Log("pulsezub1");
         }
         else if (collision.GetComponent<Zub2>())
         {
             // FadeIns = StartCoroutine(FadeIn());
-            pulsezub2.GetComponent<Animation>().Stop();
+            pulseZub[1].GetComponent<Animation>().Stop();
             Debug.Log("pulsezub2");
         }
     }
@@ -84,8 +82,8 @@ public class CleaningController : MonoBehaviour
             alpha = Mathf.Lerp(0f, 1f, t);
             if (DestroyColl.GetComponent<Zub>())
             {
-                zubPlox1.GetComponent<Image>().color = new Color(255, 255, 255, alpha);
-                pulsezub1.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+                zubPlox[0].GetComponent<Image>().color = new Color(255, 255, 255, alpha);
+                pulseZub[0].GetComponent<Image>().color = new Color(255, 255, 255, 0);
                 if (alpha == 0)
                 {
                     ZubDone();
@@ -96,8 +94,8 @@ public class CleaningController : MonoBehaviour
             }
             else if (DestroyColl.GetComponent<Zub2>())
             {
-                zubPlox2.GetComponent<Image>().color = new Color(255, 255, 255, alpha);
-                pulsezub2.GetComponent<Image>().color = new Color(255, 255, 255, 0);
+                zubPlox[1].GetComponent<Image>().color = new Color(255, 255, 255, alpha);
+                pulseZub[1].GetComponent<Image>().color = new Color(255, 255, 255, 0);
                 if (alpha == 0)
                 {
                     ZubDone();
@@ -120,11 +118,11 @@ public class CleaningController : MonoBehaviour
     {
         if (DestroyColl.GetComponent<Zub>())
         {
-            Destroy(pulsezub1);
+            Destroy(pulseZub[0]);
         }
         else if (DestroyColl.GetComponent<Zub2>())
         {
-            Destroy(pulsezub2);
+            Destroy(pulseZub[1]);
         }
     }
 }

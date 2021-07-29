@@ -621,10 +621,12 @@ MonoBehaviour:
   particlesBonus: {fileID: 811191079}
   handLeft: {fileID: 2062346534}
   handRight: {fileID: 756873115}
-  pulsezub1: {fileID: 1319845939}
-  pulsezub2: {fileID: 2002892831}
-  zubPlox1: {fileID: 1132342318}
-  zubPlox2: {fileID: 1150824581}
+  zubPlox:
+  - {fileID: 1132342318}
+  - {fileID: 1150824581}
+  pulseZub:
+  - {fileID: 1319845939}
+  - {fileID: 2002892831}
   bonus: 0
 --- !u!61 &431695724
 BoxCollider2D:
