@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class ToothController : MonoBehaviour
 {
-    [SerializeField] GameObject[] toothPlox;
-    [SerializeField] GameObject[] pulseTooth;
+    [SerializeField] GameObject pulseTooth;
     Collider2D DestroyColl;
     Coroutine FadeIns = null;
     
@@ -21,8 +20,7 @@ public class ToothController : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D collision)
     {
-        ParticleDirtStop();
-        AnimHandStop();
+       
         StopCoroutine(FadeIns);
     }
     
@@ -34,37 +32,18 @@ public class ToothController : MonoBehaviour
         {
             t -= Time.deltaTime;
             alpha = Mathf.Lerp(0f, 1f, t);
-            if (DestroyColl.GetComponent<Zub>())
-            {
-                toothPlox[0].GetComponent<Image>().color = new Color(255, 255, 255, alpha);
-                pulseTooth[0].GetComponent<Image>().color = new Color(255, 255, 255, 0);
+                this.GetComponent<Image>().color = new Color(255, 255, 255, alpha);
+                pulseTooth.GetComponent<Image>().color = new Color(255, 255, 255, 0);
                 if (alpha == 0)
                 {
                     CleanDone();
                     AnimHandStop();
                     ParticleDirtStop();
-                    Destroy();
-                }
-            }
-            else if (DestroyColl.GetComponent<Zub2>())
-            {
-                toothPlox[1].GetComponent<Image>().color = new Color(255, 255, 255, alpha);
-                pulseTooth[1].GetComponent<Image>().color = new Color(255, 255, 255, 0);
-                if (alpha == 0)
-                {
-                    CleanDone();
-                    AnimHandStop();
-                    ParticleDirtStop();
-                    Destroy();
+                    
                 }
             }
             yield return 0;
 
         }
-    }
-    
-    void Destroy()
-    {
-        Destroy(pulseTooth);
     }
 }
