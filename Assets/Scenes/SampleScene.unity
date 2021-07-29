@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderValue: {fileID: 69987893}
-  ZubAnimationController: {fileID: 0}
+  CleaningController: {fileID: 431695717}
 --- !u!1 &323160150
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 431695725}
   - component: {fileID: 431695721}
   - component: {fileID: 431695724}
-  - component: {fileID: 431695727}
+  - component: {fileID: 431695723}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -605,6 +605,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 30.9, y: 25.73}
   m_EdgeRadius: 0
+--- !u!114 &431695723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431695717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d28ddbe154cb404c97691b32a0b5d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlesDirt: {fileID: 701369291}
+  particlesBonus: {fileID: 811191079}
+  handLeft: {fileID: 2062346534}
+  handRight: {fileID: 756873115}
+  pulsezub1: {fileID: 1319845939}
+  pulsezub2: {fileID: 2002892831}
+  zubPlox1: {fileID: 1132342318}
+  zubPlox2: {fileID: 1150824581}
+  bonus: 0
 --- !u!61 &431695724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -652,27 +673,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &431695727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 431695717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa62b8a0687ea546bd2d3b20fcec56e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bonus: 0
-  pulsezub2: {fileID: 2002892831}
-  pulsezub1: {fileID: 1319845939}
-  starParticle: {fileID: 811191079}
-  dirt: {fileID: 701369291}
-  zubPlox2: {fileID: 1150824581}
-  zubPlox1: {fileID: 1132342318}
-  hand1: {fileID: 2062346534}
-  hand2: {fileID: 756873115}
 --- !u!1 &448946101
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,7 +1228,6 @@ GameObject:
   - component: {fileID: 1132342321}
   - component: {fileID: 1132342320}
   - component: {fileID: 1132342325}
-  - component: {fileID: 1132342322}
   - component: {fileID: 1132342324}
   - component: {fileID: 1132342323}
   m_Layer: 6
@@ -1295,18 +1294,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132342318}
   m_CullTransparentMesh: 1
---- !u!114 &1132342322
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1132342318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abe647b9a45cb9a40845015933a49478, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1132342323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1378,7 +1365,6 @@ GameObject:
   - component: {fileID: 1150824584}
   - component: {fileID: 1150824583}
   - component: {fileID: 1150824587}
-  - component: {fileID: 1150824585}
   - component: {fileID: 1150824586}
   - component: {fileID: 1150824588}
   m_Layer: 6
@@ -1445,18 +1431,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150824581}
   m_CullTransparentMesh: 1
---- !u!114 &1150824585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150824581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8bdf38e51ba6942826cb305b8fc108, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1150824586
 BoxCollider2D:
   m_ObjectHideFlags: 0

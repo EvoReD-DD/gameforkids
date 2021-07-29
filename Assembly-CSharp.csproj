@@ -60,10 +60,10 @@
     <Compile Include="Assets\scripts\Zub.cs" />
     <Compile Include="Assets\scripts\BonusSystem.cs" />
     <Compile Include="Assets\scripts\ZubAnimationController.cs" />
+    <Compile Include="Assets\scripts\CleaningController.cs" />
     <Compile Include="Assets\scripts\ArrowChase.cs" />
     <Compile Include="Assets\scripts\Zub2.cs" />
     <Compile Include="Assets\scripts\ProgressBar.cs" />
-    <Compile Include="Assets\scripts\DryController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\particle.shader" />
