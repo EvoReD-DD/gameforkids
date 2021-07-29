@@ -64,6 +64,7 @@
     <Compile Include="Assets\scripts\ArrowChase.cs" />
     <Compile Include="Assets\scripts\Zub2.cs" />
     <Compile Include="Assets\scripts\ProgressBar.cs" />
+    <Compile Include="Assets\scripts\ToothController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\particle.shader" />
