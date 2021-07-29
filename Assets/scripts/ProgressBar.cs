@@ -17,7 +17,7 @@ public class ProgressBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SliderInc();
+       // SliderInc();
     }
 
     void SliderInc()
