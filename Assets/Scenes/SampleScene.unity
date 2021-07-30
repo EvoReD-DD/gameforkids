@@ -621,12 +621,6 @@ MonoBehaviour:
   particlesBonus: {fileID: 811191079}
   handLeft: {fileID: 2062346534}
   handRight: {fileID: 756873115}
-  toothPlox:
-  - {fileID: 1132342318}
-  - {fileID: 1150824581}
-  pulseTooth:
-  - {fileID: 1319845939}
-  - {fileID: 2002892831}
   bonus: 0
 --- !u!61 &431695724
 BoxCollider2D:
@@ -1231,7 +1225,7 @@ GameObject:
   - component: {fileID: 1132342320}
   - component: {fileID: 1132342325}
   - component: {fileID: 1132342324}
-  - component: {fileID: 1132342323}
+  - component: {fileID: 1132342322}
   m_Layer: 6
   m_Name: toothplox1
   m_TagString: Untagged
@@ -1296,7 +1290,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132342318}
   m_CullTransparentMesh: 1
---- !u!114 &1132342323
+--- !u!114 &1132342322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1305,9 +1299,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1132342318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8bdf38e51ba6942826cb305b8fc108, type: 3}
+  m_Script: {fileID: 11500000, guid: ff1d1c2f5ce98a949862c7149d69afa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pulseTooth: {fileID: 1319845939}
 --- !u!50 &1132342324
 Rigidbody2D:
   serializedVersion: 4
@@ -1367,8 +1362,8 @@ GameObject:
   - component: {fileID: 1150824584}
   - component: {fileID: 1150824583}
   - component: {fileID: 1150824587}
+  - component: {fileID: 1150824585}
   - component: {fileID: 1150824586}
-  - component: {fileID: 1150824588}
   m_Layer: 6
   m_Name: toothplox2
   m_TagString: Untagged
@@ -1433,6 +1428,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150824581}
   m_CullTransparentMesh: 1
+--- !u!114 &1150824585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150824581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1d1c2f5ce98a949862c7149d69afa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pulseTooth: {fileID: 2002892831}
 --- !u!61 &1150824586
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1480,18 +1488,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1150824588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150824581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abe647b9a45cb9a40845015933a49478, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1319845939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1503,7 +1499,6 @@ GameObject:
   - component: {fileID: 1319845940}
   - component: {fileID: 1319845942}
   - component: {fileID: 1319845941}
-  - component: {fileID: 1319845944}
   - component: {fileID: 1319845943}
   m_Layer: 6
   m_Name: pulsetoothfirst
@@ -1586,18 +1581,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &1319845944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319845939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e8bdf38e51ba6942826cb305b8fc108, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1322281595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,7 +1811,6 @@ GameObject:
   - component: {fileID: 2002892834}
   - component: {fileID: 2002892833}
   - component: {fileID: 2002892835}
-  - component: {fileID: 2002892836}
   m_Layer: 6
   m_Name: pulsetoothsecond
   m_TagString: Untagged
@@ -1910,18 +1892,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &2002892836
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2002892831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abe647b9a45cb9a40845015933a49478, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2062346534
 GameObject:
   m_ObjectHideFlags: 0

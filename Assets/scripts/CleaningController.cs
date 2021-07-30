@@ -11,7 +11,17 @@ public class CleaningController : MonoBehaviour
     [SerializeField] GameObject handRight;
     public float bonus;
 
-    void AnimHandPlay()
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        ParticleDirtStop();
+        AnimHandStop();
+    }
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        ParticleDirtPlay();
+        AnimHandPlay();
+    }
+void AnimHandPlay()
     {
         handLeft.GetComponent<Animation>().Play("HandZombi");
         handRight.GetComponent<Animation>().Play("Handzombie2");
