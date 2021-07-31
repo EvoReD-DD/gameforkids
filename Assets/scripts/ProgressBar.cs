@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ProgressBar : MonoBehaviour
 {
     [SerializeField] Slider sliderValue;
-    [SerializeField] GameObject CleaningController;
+    [SerializeField] GameObject bonusSystem;
     float bonus;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,7 @@ public class ProgressBar : MonoBehaviour
 
     void SliderInc()
     {
-        bonus = CleaningController.GetComponent<CleaningController>().bonus;
-        sliderValue.value = bonus;
+        
+        sliderValue.value = bonusSystem.GetComponent<BonusSystem>().bonus;
     }
 }

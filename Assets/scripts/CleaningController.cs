@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class CleaningController : MonoBehaviour
 {
     [SerializeField] ParticleSystem particlesDirt;
-    [SerializeField] ParticleSystem particlesBonus;
+    
     [SerializeField] GameObject handLeft;
     [SerializeField] GameObject handRight;
-    public float bonus;
+    
 
     void OnTriggerExit2D(Collider2D collision)
     {
@@ -40,10 +40,5 @@ void AnimHandPlay()
     {
         particlesDirt.Stop();
     }
-    void CleanDone()
-    {
-        particlesBonus.Play();
-        bonus = bonus + 1;
-        Debug.Log(bonus);
-    }
+    
 }
