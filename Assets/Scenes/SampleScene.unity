@@ -275,7 +275,6 @@ GameObject:
   - component: {fileID: 69987892}
   - component: {fileID: 69987893}
   - component: {fileID: 69987894}
-  - component: {fileID: 69987895}
   m_Layer: 5
   m_Name: ProgressBar
   m_TagString: Untagged
@@ -370,20 +369,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderValue: {fileID: 69987893}
   bonusSystem: {fileID: 1001367399}
---- !u!114 &69987895
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69987891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a3ed547d98fd146ac3f96f397a8a0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particlesBonus: {fileID: 0}
-  bonus: 0
 --- !u!1 &323160150
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particlesBonus: {fileID: 811191079}
+  toothController: {fileID: 0}
   bonus: 0
 --- !u!4 &1001367401
 Transform:
